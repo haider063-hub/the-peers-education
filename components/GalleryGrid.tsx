@@ -1,0 +1,79 @@
+"use client";
+
+import { useMemo, useState } from "react";
+import Image from "next/image";
+import { galleryCategories, galleryItems } from "@/lib/content";
+import { Lightbox } from "@/components/Lightbox";
+import { cn } from "@/lib/cn";
+
+export function GalleryGrid() {
+  const [filter, setFilter] = useState<(typeof galleryCategories)[number]>("All");
+  const [index, setIndex] = useState<number | null>(null);
+
+  const items = useMemo(
+    () =>
+      filter === "All"
+        ? galleryItems
+        : galleryItems.filter((item) => item.category === filter),
+    [filter],
+  );
+
+  return (
+    <div>
+      <div className="flex flex-wrap gap-2">
+        {galleryCategories.map((category) => (
+          <button
+            key={category}
+            type="button"
+            onClick={() => {
+              setFilter(category);
+              setIndex(null);
+            }}
+            className={cn(
+              "min-h-11 rounded-full px-4 py-2 text-base font-medium transition-[color,background-color] duration-500 ease-[cubic-bezier(0.22,1,0.36,1)]",
+              filter === category
+                ? "bg-deep-navy text-white"
+                : "bg-white text-deep-navy ring-1 ring-deep-navy/10 lg:[@media(hover:hover)_and_(pointer:fine)]:hover:bg-deep-navy lg:[@media(hover:hover)_and_(pointer:fine)]:hover:text-white",
+            )}
+          >
+            {category}
+          </button>
+        ))}
+      </div>
+      <ul className="mt-8 columns-1 gap-4 sm:columns-2 lg:columns-3">
+        {items.map((item, itemIndex) => (
+          <li key={item.src} className="mb-4 break-inside-avoid">
+            <figure className="overflow-hidden rounded-[12px] bg-white ring-1 ring-deep-navy/8">
+              <button
+                type="button"
+                className="block w-full"
+                onClick={() => setIndex(itemIndex)}
+                aria-label={`Open photograph: ${item.alt}`}
+              >
+                <Image
+                  src={item.src}
+                  alt={item.alt}
+                  width={800}
+                  height={600}
+                  className="h-auto w-full object-cover transition-transform duration-700 ease-[cubic-bezier(0.22,1,0.36,1)] motion-reduce:transform-none lg:[@media(hover:hover)_and_(pointer:fine)]:hover:scale-[1.03]"
+                />
+              </button>
+              <figcaption className="flex flex-col gap-1 px-3 py-2 text-sm text-muted sm:flex-row sm:items-center sm:justify-between">
+                <span className="leading-snug">{item.alt}</span>
+                <span className="w-fit rounded-md bg-marigold px-1.5 py-0.5 text-xs font-semibold uppercase tracking-wide text-deep-navy">
+                  {item.category}
+                </span>
+              </figcaption>
+            </figure>
+          </li>
+        ))}
+      </ul>
+      <Lightbox
+        items={items}
+        index={index}
+        onClose={() => setIndex(null)}
+        onIndexChange={setIndex}
+      />
+    </div>
+  );
+}

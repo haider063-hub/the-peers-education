@@ -1,26 +1,129 @@
 @import "tailwindcss";
+@import "lenis/dist/lenis.css";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --ink: #1f2937;
+  --paper: #fffbf2;
+  --surface: #ffffff;
+  --marigold: #e89b24;
+  --deep-navy: #1b3a5c;
+  --leaf: #3f6f45;
+  --cloud: #e6dfd0;
+  --muted: #4b5563;
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-ink: var(--ink);
+  --color-paper: var(--paper);
+  --color-surface: var(--surface);
+  --color-marigold: var(--marigold);
+  --color-deep-navy: var(--deep-navy);
+  --color-leaf: var(--leaf);
+  --color-cloud: var(--cloud);
+  --color-muted: var(--muted);
+  --font-display: var(--font-manrope);
+  --font-sans: var(--font-inter);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+@custom-variant dark (&:where(.dark, .dark *));
+
+html,
+body {
+  overflow-x: hidden;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  font-size: 16px;
+  line-height: 1.65;
+}
+
+h1,
+h2,
+h3,
+h4,
+.font-display {
+  font-family: var(--font-manrope), ui-sans-serif, system-ui, sans-serif;
+  letter-spacing: -0.03em;
+}
+
+::selection {
+  background: color-mix(in srgb, var(--marigold) 40%, white);
+  color: var(--deep-navy);
+}
+
+.lenis.lenis-smooth iframe {
+  pointer-events: auto;
+}
+
+img,
+video,
+iframe {
+  max-width: 100%;
+}
+
+a[href],
+button:not(:disabled),
+[role="button"],
+select:not(:disabled),
+summary {
+  cursor: pointer;
+}
+
+button:disabled,
+select:disabled,
+[aria-disabled="true"] {
+  cursor: not-allowed;
+}
+
+.link-underline {
+  position: relative;
+  display: inline-block;
+}
+
+@media (min-width: 1024px) {
+  .link-underline::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 1px;
+    min-height: 1px;
+    max-height: 1px;
+    width: 100%;
+    background: currentColor;
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.45s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  .link-underline-active::after {
+    transform: scaleX(1);
+    transform-origin: left;
+  }
+
+  @media (hover: hover) and (pointer: fine) {
+    .link-underline:hover::after {
+      transform: scaleX(1);
+      transform-origin: left;
+    }
+  }
+}
+
+@media (min-width: 1024px) {
+  .home-hero {
+    height: 95vh;
+    max-height: 95vh;
+    min-height: 95vh;
+  }
+}
+
+@media (min-width: 1440px) {
+  .home-hero {
+    height: min(800px, 95vh);
+    max-height: 800px;
+    min-height: 0;
+  }
 }

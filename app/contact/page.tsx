@@ -1,0 +1,127 @@
+import type { Metadata } from "next";
+import { Mail, MapPin, MessageCircle, Phone } from "lucide-react";
+import { FacebookIcon } from "@/components/FacebookIcon";
+import { ButtonLink } from "@/components/Button";
+import { Container } from "@/components/Container";
+import { InquiryForm } from "@/components/InquiryForm";
+import { PageHero } from "@/components/PageHero";
+import { SectionHeading } from "@/components/SectionHeading";
+import { school } from "@/lib/content";
+
+export const metadata: Metadata = {
+  title: "Contact",
+  description:
+    "Visit The Peers Education System on Amir Road, Shad Bagh, Lahore — or send a message.",
+};
+
+export default function ContactPage() {
+  return (
+    <>
+      <PageHero
+        kicker="Contact"
+        title="The office is easier to reach than a form."
+        description="Call, WhatsApp, visit, or write. The map pin is the campus plus-code in Shad Bagh."
+      />
+
+      <section className="py-12 sm:py-16 lg:py-24">
+        <Container className="grid gap-10 lg:grid-cols-2 lg:gap-12">
+          <div className="min-w-0">
+            <SectionHeading kicker="Find us" title="Amir Road, Shad Bagh" />
+            <p className="mt-4 max-w-md text-base text-muted">
+              {school.officeNote}
+            </p>
+            <div className="mt-6 flex w-full flex-col gap-3 sm:flex-row sm:flex-wrap">
+              <ButtonLink href={school.phoneHref} variant="navy" arrow className="w-full sm:w-auto">
+                Call the office
+              </ButtonLink>
+              <ButtonLink href={school.whatsappHref} variant="ghost" className="w-full sm:w-auto">
+                WhatsApp
+              </ButtonLink>
+            </div>
+            <ul className="mt-8 space-y-4 text-muted">
+              <li className="flex gap-3">
+                <MapPin className="mt-0.5 shrink-0 text-marigold" size={18} />
+                <a
+                  href={school.mapsLink}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="link-underline"
+                >
+                  {school.location}
+                  <span className="mt-0.5 block text-base">{school.plusCode}</span>
+                </a>
+              </li>
+              <li className="flex gap-3">
+                <Phone className="mt-0.5 shrink-0 text-marigold" size={18} />
+                <a href={school.phoneHref} className="link-underline">
+                  {school.phone}
+                </a>
+              </li>
+              <li className="flex gap-3">
+                <MessageCircle className="mt-0.5 shrink-0 text-marigold" size={18} />
+                <a
+                  href={school.whatsappHref}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="link-underline"
+                >
+                  WhatsApp
+                </a>
+              </li>
+              <li className="flex gap-3">
+                <Mail className="mt-0.5 shrink-0 text-marigold" size={18} />
+                <a
+                  href={`mailto:${school.email}`}
+                  className="link-underline break-all"
+                >
+                  {school.email}
+                </a>
+              </li>
+              <li className="flex gap-3">
+                <span className="mt-0.5 shrink-0 text-marigold">
+                  <FacebookIcon size={18} />
+                </span>
+                <a
+                  href={school.facebook}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="link-underline"
+                >
+                  Facebook
+                </a>
+              </li>
+            </ul>
+            <div className="mt-8 overflow-hidden rounded-[12px] ring-1 ring-deep-navy/10">
+              <iframe
+                title="The Peers Education System campus map"
+                src={school.mapsEmbed}
+                className="h-56 w-full border-0 sm:h-72"
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+              />
+            </div>
+            <a
+              href={school.mapsLink}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="link-underline mt-4 inline-block text-base text-deep-navy"
+            >
+              Open the campus pin in Google Maps
+            </a>
+          </div>
+
+          <div className="min-w-0">
+            <SectionHeading
+              kicker="Write to us"
+              title="Send a message"
+              description="Send a message and we will reply by phone, WhatsApp, or email."
+            />
+            <div className="mt-8 rounded-[12px] border border-deep-navy/10 bg-white p-4 sm:p-6 lg:p-8">
+              <InquiryForm mode="contact" />
+            </div>
+          </div>
+        </Container>
+      </section>
+    </>
+  );
+}
