@@ -5,7 +5,7 @@ import { Container } from "@/components/Container";
 import { IconMark } from "@/components/IconMark";
 import { PageHero } from "@/components/PageHero";
 import { SectionHeading } from "@/components/SectionHeading";
-import { activities } from "@/lib/content";
+import { activities, ogImage } from "@/lib/content";
 
 export const metadata: Metadata = {
   title: "Academics",
@@ -15,6 +15,7 @@ export const metadata: Metadata = {
     title: "Academics | The Peers Education System",
     description:
       "Class levels, curriculum, and co-curricular life at The Peers Education System.",
+    images: [ogImage],
   },
 };
 

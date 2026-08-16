@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { Container } from "@/components/Container";
 import { GalleryGrid } from "@/components/GalleryGrid";
 import { PageHero } from "@/components/PageHero";
-import { school } from "@/lib/content";
+import { ogImage, school } from "@/lib/content";
 
 export const metadata: Metadata = {
   title: "Gallery",
@@ -12,6 +12,7 @@ export const metadata: Metadata = {
     title: "Gallery | The Peers Education System",
     description:
       "Campus, events, sports, and classroom life at The Peers Education System.",
+    images: [ogImage],
   },
 };
 

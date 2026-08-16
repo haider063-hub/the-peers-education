@@ -21,6 +21,13 @@ export const school = {
   formRecipient: "haiderofficial127@gmail.com",
 };
 
+export const ogImage = {
+  url: "/images/home-page.png",
+  width: 1319,
+  height: 737,
+  alt: "The Peers Education System",
+} as const;
+
 export const navLinks = [
   { href: "/about", label: "About" },
   { href: "/academics", label: "Academics" },

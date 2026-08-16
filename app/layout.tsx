@@ -5,7 +5,7 @@ import { AdmissionsCta } from "@/components/AdmissionsCta";
 import { Footer } from "@/components/Footer";
 import { QuickContact } from "@/components/QuickContact";
 import { SmoothScroll } from "@/components/SmoothScroll";
-import { school } from "@/lib/content";
+import { school, ogImage } from "@/lib/content";
 import "./globals.css";
 
 const manrope = Manrope({
@@ -35,7 +35,15 @@ export const metadata: Metadata = {
     title: school.name,
     description:
       "The Peers Education System — a modern school in Shad Bagh, Lahore, from Playgroup through Matric.",
-    images: ["/images/modern-hero.jpg"],
+    type: "website",
+    images: [ogImage],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: school.name,
+    description:
+      "The Peers Education System — a modern school in Shad Bagh, Lahore, from Playgroup through Matric.",
+    images: [ogImage.url],
   },
 };
 

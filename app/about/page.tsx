@@ -5,7 +5,7 @@ import { NotebookMargin } from "@/components/NotebookMargin";
 import { PageHero } from "@/components/PageHero";
 import { PrincipalPortraits } from "@/components/PrincipalPortraits";
 import { SectionHeading } from "@/components/SectionHeading";
-import { director, facilities, school, values } from "@/lib/content";
+import { director, facilities, ogImage, school, values } from "@/lib/content";
 
 export const metadata: Metadata = {
   title: "About",
@@ -15,6 +15,7 @@ export const metadata: Metadata = {
     title: "About | The Peers Education System",
     description:
       "History, mission, and values of The Peers Education System in Shad Bagh, Lahore.",
+    images: [ogImage],
   },
 };
 

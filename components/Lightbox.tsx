@@ -53,7 +53,9 @@ export function Lightbox({
     return () => window.removeEventListener("keydown", onKey);
   }, [open, index, items.length, onClose, onIndexChange]);
 
-  if (!open || !item) return null;
+  if (index === null || !item) return null;
+
+  const currentIndex = index;
 
   function onDragEnd(
     _: MouseEvent | TouchEvent | PointerEvent,
@@ -62,9 +64,9 @@ export function Lightbox({
     if (items.length < 2) return;
     const { offset, velocity } = info;
     if (offset.x < -70 || velocity.x < -500) {
-      onIndexChange((index + 1) % items.length);
+      onIndexChange((currentIndex + 1) % items.length);
     } else if (offset.x > 70 || velocity.x > 500) {
-      onIndexChange((index - 1 + items.length) % items.length);
+      onIndexChange((currentIndex - 1 + items.length) % items.length);
     }
   }
 
@@ -94,7 +96,7 @@ export function Lightbox({
             aria-label="Previous photograph"
             className="relative z-20 inline-flex h-11 w-11 shrink-0 items-center justify-center rounded-[10px] bg-white text-deep-navy"
             onClick={() =>
-              onIndexChange((index - 1 + items.length) % items.length)
+              onIndexChange((currentIndex - 1 + items.length) % items.length)
             }
           >
             <ChevronLeft size={22} />
@@ -132,7 +134,7 @@ export function Lightbox({
             type="button"
             aria-label="Next photograph"
             className="relative z-20 inline-flex h-11 w-11 shrink-0 items-center justify-center rounded-[10px] bg-white text-deep-navy"
-            onClick={() => onIndexChange((index + 1) % items.length)}
+            onClick={() => onIndexChange((currentIndex + 1) % items.length)}
           >
             <ChevronRight size={22} />
           </button>

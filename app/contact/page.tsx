@@ -6,7 +6,7 @@ import { Container } from "@/components/Container";
 import { InquiryForm } from "@/components/InquiryForm";
 import { PageHero } from "@/components/PageHero";
 import { SectionHeading } from "@/components/SectionHeading";
-import { school } from "@/lib/content";
+import { ogImage, school } from "@/lib/content";
 
 export const metadata: Metadata = {
   title: "Contact",
@@ -16,6 +16,7 @@ export const metadata: Metadata = {
     title: "Contact | The Peers Education System",
     description:
       "Visit The Peers Education System on Amir Road, Shad Bagh, Lahore — or send a message.",
+    images: [ogImage],
   },
 };
 

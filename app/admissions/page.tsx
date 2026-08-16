@@ -9,6 +9,7 @@ import {
   admissionSteps,
   ageCriteria,
   faqs,
+  ogImage,
   requiredDocuments,
 } from "@/lib/content";
 
@@ -20,6 +21,7 @@ export const metadata: Metadata = {
     title: "Admissions | The Peers Education System",
     description:
       "How to apply to The Peers Education System — inquiry, campus visit, assessment, and enrollment.",
+    images: [ogImage],
   },
 };
 

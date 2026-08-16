@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { ogImage } from "@/lib/content";
 import { Container } from "@/components/Container";
 import { NewsGrid } from "@/components/NewsGrid";
 import { PageHero } from "@/components/PageHero";
@@ -11,6 +12,7 @@ export const metadata: Metadata = {
     title: "News | The Peers Education System",
     description:
       "School news and events at The Peers Education System, Shad Bagh.",
+    images: [ogImage],
   },
 };
 
