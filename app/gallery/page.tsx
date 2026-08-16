@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Container } from "@/components/Container";
 import { GalleryGrid } from "@/components/GalleryGrid";
 import { PageHero } from "@/components/PageHero";
+import { school } from "@/lib/content";
 
 export const metadata: Metadata = {
   title: "Gallery",
@@ -19,7 +20,7 @@ export default function GalleryPage() {
     <>
       <PageHero
         kicker="Gallery"
-        title="Life on Amir Road."
+        title={`Life at ${school.name}.`}
         description="Campus mornings, assemblies, sports days, and classroom work. Click a photograph to open it."
       />
       <section className="py-16 sm:py-24">
