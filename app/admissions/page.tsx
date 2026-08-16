@@ -57,8 +57,8 @@ export default function AdmissionsPage() {
       </section>
 
       <section className="bg-cloud py-16 sm:py-24">
-        <Container className="grid gap-12 lg:grid-cols-2">
-          <div>
+        <Container className="grid min-w-0 gap-12 lg:grid-cols-2">
+          <div className="min-w-0">
             <SectionHeading kicker="Paperwork" title="Documents to bring" />
             <ul className="mt-6 space-y-3">
               {requiredDocuments.map((item) => (
@@ -77,13 +77,13 @@ export default function AdmissionsPage() {
               <ConfirmBadge>Fees</ConfirmBadge>
             </p>
           </div>
-          <div>
+          <div className="min-w-0">
             <SectionHeading kicker="Placement" title="Age criteria" />
             <p className="mt-3 text-base text-muted">
               Typical ages only. The office will confirm the right class for
               your child.
             </p>
-            <div className="mt-6 overflow-x-auto rounded-[12px] border border-deep-navy/10 bg-white">
+            <div className="mt-6 w-full min-w-0 overflow-x-auto overflow-y-hidden overscroll-x-contain rounded-[12px] border border-deep-navy/10 bg-white [-webkit-overflow-scrolling:touch]">
               <table className="w-full min-w-[32rem] text-left text-base">
                 <thead className="bg-deep-navy text-white">
                   <tr>
