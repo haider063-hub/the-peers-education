@@ -59,61 +59,59 @@ export function Lightbox({
       role="dialog"
       aria-modal="true"
       aria-label={item.alt}
-      className="fixed inset-0 z-[60] flex cursor-pointer items-center justify-center bg-deep-navy/88 p-4"
+      className="fixed inset-0 z-[60] flex cursor-pointer items-center justify-center bg-deep-navy/88 px-2 py-16 sm:p-4"
       onClick={onClose}
     >
       <button
         type="button"
         aria-label="Close photograph"
-        className="absolute top-4 right-4 inline-flex h-11 w-11 items-center justify-center rounded-[10px] bg-white text-deep-navy"
+        className="absolute top-4 right-4 z-20 inline-flex h-11 w-11 items-center justify-center rounded-[10px] bg-white text-deep-navy"
         onClick={onClose}
       >
         <X size={20} />
       </button>
-      {items.length > 1 ? (
-        <>
+      <div
+        className="flex w-full max-w-5xl cursor-default items-center gap-1 sm:gap-3"
+        onClick={(event) => event.stopPropagation()}
+      >
+        {items.length > 1 ? (
           <button
             type="button"
             aria-label="Previous photograph"
-            className="absolute left-2 top-1/2 inline-flex h-11 w-11 -translate-y-1/2 items-center justify-center rounded-[10px] bg-white text-deep-navy sm:left-4"
-            onClick={(event) => {
-              event.stopPropagation();
-              onIndexChange((index - 1 + items.length) % items.length);
-            }}
+            className="relative z-20 inline-flex h-11 w-11 shrink-0 items-center justify-center rounded-[10px] bg-white text-deep-navy"
+            onClick={() =>
+              onIndexChange((index - 1 + items.length) % items.length)
+            }
           >
             <ChevronLeft size={22} />
           </button>
+        ) : null}
+        <figure className="min-w-0 flex-1">
+          <div className="relative aspect-[4/3] overflow-hidden rounded-[12px] bg-black/20">
+            <Image
+              src={item.src}
+              alt={item.alt}
+              fill
+              className="object-contain"
+              sizes="100vw"
+              priority
+            />
+          </div>
+          <figcaption className="mt-3 text-center text-base text-white/85">
+            {item.alt}
+          </figcaption>
+        </figure>
+        {items.length > 1 ? (
           <button
             type="button"
             aria-label="Next photograph"
-            className="absolute right-2 top-1/2 inline-flex h-11 w-11 -translate-y-1/2 items-center justify-center rounded-[10px] bg-white text-deep-navy sm:right-4"
-            onClick={(event) => {
-              event.stopPropagation();
-              onIndexChange((index + 1) % items.length);
-            }}
+            className="relative z-20 inline-flex h-11 w-11 shrink-0 items-center justify-center rounded-[10px] bg-white text-deep-navy"
+            onClick={() => onIndexChange((index + 1) % items.length)}
           >
             <ChevronRight size={22} />
           </button>
-        </>
-      ) : null}
-      <figure
-        className="relative max-h-[80svh] w-full max-w-5xl cursor-default"
-        onClick={(event) => event.stopPropagation()}
-      >
-        <div className="relative aspect-[4/3] overflow-hidden rounded-[12px] bg-black/20">
-          <Image
-            src={item.src}
-            alt={item.alt}
-            fill
-            className="object-contain"
-            sizes="100vw"
-            priority
-          />
-        </div>
-        <figcaption className="mt-3 text-center text-base text-white/85">
-          {item.alt}
-        </figcaption>
-      </figure>
+        ) : null}
+      </div>
     </div>
   );
 }
