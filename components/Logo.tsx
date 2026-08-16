@@ -10,10 +10,11 @@ export function Logo({
 }) {
   return (
     <Image
-      src="/images/peers-logo.png"
+      src="/images/peers-logo.png?v=2"
       alt="The Peers Education System"
-      width={398}
-      height={145}
+      width={2048}
+      height={682}
+      unoptimized
       priority={priority}
       className={cn("w-auto object-contain", className ?? "h-12 sm:h-14")}
     />
