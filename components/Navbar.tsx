@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
-import { Mail, Menu, X } from "lucide-react";
+import { Menu, Phone, X } from "lucide-react";
 import { useLenis } from "lenis/react";
 import { navLinks } from "@/lib/content";
 import { cn } from "@/lib/cn";
@@ -76,7 +76,7 @@ export function Navbar() {
           </nav>
           <div className="hidden items-center gap-4 lg:flex">
             <ButtonLink href="/contact" variant="primary">
-              <Mail size={16} strokeWidth={2} />
+              <Phone size={16} strokeWidth={2} />
               Contact Us
             </ButtonLink>
             <ButtonLink href="/admissions" variant="navy" arrow>
@@ -129,7 +129,7 @@ export function Navbar() {
             ))}
             <div className="mt-3 flex flex-col gap-3 border-t border-deep-navy/10 pt-4">
               <ButtonLink href="/contact" variant="primary" className="w-full">
-                <Mail size={16} strokeWidth={2} />
+                <Phone size={16} strokeWidth={2} />
                 Contact Us
               </ButtonLink>
               <ButtonLink
