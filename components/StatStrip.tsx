@@ -45,7 +45,7 @@ export function StatStrip() {
   return (
     <section className="relative z-10 -mt-12 pb-6 sm:-mt-16">
       <Container>
-        <div className="grid grid-cols-2 gap-px overflow-hidden rounded-[12px] bg-deep-navy/10 shadow-[0_18px_50px_-24px_rgba(27,58,92,0.45)] sm:grid-cols-4">
+        <div className="grid grid-cols-2 gap-px overflow-hidden rounded-[12px] bg-[#E5E7EB] shadow-[0_18px_50px_-24px_rgba(27,58,92,0.45)] sm:grid-cols-4">
           {stats.map((stat) => (
             <div
               key={stat.label}
