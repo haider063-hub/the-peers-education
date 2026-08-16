@@ -7,6 +7,11 @@ export const metadata: Metadata = {
   title: "Gallery",
   description:
     "Campus, events, sports, and classroom life at The Peers Education System.",
+  openGraph: {
+    title: "Gallery | The Peers Education System",
+    description:
+      "Campus, events, sports, and classroom life at The Peers Education System.",
+  },
 };
 
 export default function GalleryPage() {

@@ -12,6 +12,11 @@ export const metadata: Metadata = {
   title: "Contact",
   description:
     "Visit The Peers Education System on Amir Road, Shad Bagh, Lahore — or send a message.",
+  openGraph: {
+    title: "Contact | The Peers Education System",
+    description:
+      "Visit The Peers Education System on Amir Road, Shad Bagh, Lahore — or send a message.",
+  },
 };
 
 export default function ContactPage() {

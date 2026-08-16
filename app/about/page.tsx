@@ -11,6 +11,11 @@ export const metadata: Metadata = {
   title: "About",
   description:
     "History, mission, and values of The Peers Education System in Shad Bagh, Lahore.",
+  openGraph: {
+    title: "About | The Peers Education System",
+    description:
+      "History, mission, and values of The Peers Education System in Shad Bagh, Lahore.",
+  },
 };
 
 export default function AboutPage() {

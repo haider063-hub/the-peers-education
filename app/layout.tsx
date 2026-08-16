@@ -22,8 +22,8 @@ const inter = Inter({
 
 export const metadata: Metadata = {
   title: {
-    default: `${school.name} | Shad Bagh, Lahore`,
-    template: `%s | ${school.shortName}`,
+    default: school.name,
+    template: `%s | ${school.name}`,
   },
   description:
     "The Peers Education System — a modern school in Shad Bagh, Lahore, from Playgroup through Matric.",
@@ -32,9 +32,9 @@ export const metadata: Metadata = {
     apple: [{ url: "/favicon.png", type: "image/png" }],
   },
   openGraph: {
-    title: `${school.name} | Shad Bagh, Lahore`,
+    title: school.name,
     description:
-      "A modern school in Shad Bagh, Lahore — Playgroup through Matric.",
+      "The Peers Education System — a modern school in Shad Bagh, Lahore, from Playgroup through Matric.",
     images: ["/images/modern-hero.jpg"],
   },
 };

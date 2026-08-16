@@ -16,6 +16,11 @@ export const metadata: Metadata = {
   title: "Admissions",
   description:
     "How to apply to The Peers Education System — inquiry, campus visit, assessment, and enrollment.",
+  openGraph: {
+    title: "Admissions | The Peers Education System",
+    description:
+      "How to apply to The Peers Education System — inquiry, campus visit, assessment, and enrollment.",
+  },
 };
 
 export default function AdmissionsPage() {

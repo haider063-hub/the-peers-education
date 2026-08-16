@@ -11,6 +11,11 @@ export const metadata: Metadata = {
   title: "Academics",
   description:
     "Class levels, curriculum, and co-curricular life at The Peers Education System.",
+  openGraph: {
+    title: "Academics | The Peers Education System",
+    description:
+      "Class levels, curriculum, and co-curricular life at The Peers Education System.",
+  },
 };
 
 export default function AcademicsPage() {

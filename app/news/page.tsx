@@ -7,6 +7,11 @@ export const metadata: Metadata = {
   title: "News",
   description:
     "School news and events at The Peers Education System, Shad Bagh.",
+  openGraph: {
+    title: "News | The Peers Education System",
+    description:
+      "School news and events at The Peers Education System, Shad Bagh.",
+  },
 };
 
 export default function NewsPage() {
