@@ -2,6 +2,7 @@
 
 import { useEffect } from "react";
 import Image from "next/image";
+import { motion } from "framer-motion";
 import { ChevronLeft, ChevronRight, X } from "lucide-react";
 import { useLenis } from "lenis/react";
 
@@ -54,6 +55,19 @@ export function Lightbox({
 
   if (!open || !item) return null;
 
+  function onDragEnd(
+    _: MouseEvent | TouchEvent | PointerEvent,
+    info: { offset: { x: number }; velocity: { x: number } },
+  ) {
+    if (items.length < 2) return;
+    const { offset, velocity } = info;
+    if (offset.x < -70 || velocity.x < -500) {
+      onIndexChange((index + 1) % items.length);
+    } else if (offset.x > 70 || velocity.x > 500) {
+      onIndexChange((index - 1 + items.length) % items.length);
+    }
+  }
+
   return (
     <div
       role="dialog"
@@ -87,16 +101,28 @@ export function Lightbox({
           </button>
         ) : null}
         <figure className="min-w-0 flex-1">
-          <div className="relative aspect-[4/3] overflow-hidden rounded-[12px] bg-black/20">
+          <motion.div
+            key={item.src}
+            drag={items.length > 1 ? "x" : false}
+            dragElastic={0.18}
+            dragConstraints={{ left: 0, right: 0 }}
+            onDragEnd={onDragEnd}
+            className={
+              items.length > 1
+                ? "relative aspect-[4/3] cursor-grab overflow-hidden rounded-[12px] bg-black/20 active:cursor-grabbing"
+                : "relative aspect-[4/3] overflow-hidden rounded-[12px] bg-black/20"
+            }
+          >
             <Image
               src={item.src}
               alt={item.alt}
               fill
-              className="object-contain"
+              draggable={false}
+              className="pointer-events-none object-contain"
               sizes="100vw"
               priority
             />
-          </div>
+          </motion.div>
           <figcaption className="mt-3 text-center text-base text-white/85">
             {item.alt}
           </figcaption>
