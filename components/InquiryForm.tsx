@@ -155,9 +155,11 @@ export function InquiryForm({ mode }: { mode: Mode }) {
               ? "Tell us about your child, the class you have in mind, and any questions for the office."
               : "How can we help? Share your question or the best time to visit."
           }
+          data-lenis-prevent
+          data-lenis-prevent-touch
           className={cn(
             fieldClass,
-            "min-h-32 max-h-64 resize-y overflow-y-auto",
+            "min-h-32 max-h-64 resize-y overflow-y-auto overscroll-contain",
           )}
         />
       </div>

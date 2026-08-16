@@ -40,9 +40,9 @@ export function GalleryGrid() {
           </button>
         ))}
       </div>
-      <ul className="mt-8 columns-1 gap-4 sm:columns-2 lg:columns-3">
+      <ul className="mt-8 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
         {items.map((item, itemIndex) => (
-          <li key={item.src} className="mb-4 break-inside-avoid">
+          <li key={item.src}>
             <figure className="overflow-hidden rounded-[12px] bg-white ring-1 ring-deep-navy/8">
               <button
                 type="button"

@@ -78,6 +78,8 @@ export function SelectField({
         />
       </button>
       <div
+        data-lenis-prevent
+        data-lenis-prevent-touch
         className={cn(
           "absolute z-20 mt-1 w-full overflow-hidden rounded-[10px] bg-white shadow-[0_12px_28px_-16px_rgba(27,58,92,0.35)] ring-1 ring-deep-navy/10 transition-[grid-template-rows,opacity] duration-500 ease-[cubic-bezier(0.22,1,0.36,1)]",
           "grid",
@@ -86,7 +88,12 @@ export function SelectField({
             : "pointer-events-none grid-rows-[0fr] opacity-0",
         )}
       >
-        <ul role="listbox" className="min-h-0 max-h-60 overflow-y-auto py-1">
+        <ul
+          role="listbox"
+          data-lenis-prevent
+          data-lenis-prevent-touch
+          className="min-h-0 max-h-60 overflow-y-auto overscroll-contain py-1"
+        >
           {options.map((option) => {
             const selected = option === value;
             return (
