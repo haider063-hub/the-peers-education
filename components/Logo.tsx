@@ -10,7 +10,7 @@ export function Logo({
 }) {
   return (
     <Image
-      src="/images/peers-logo.png?v=3"
+      src="/images/peers-logo.png"
       alt="The Peers Education System"
       width={800}
       height={266}

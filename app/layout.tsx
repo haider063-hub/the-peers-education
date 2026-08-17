@@ -21,16 +21,13 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://the-peers-education.vercel.app"),
   title: {
     default: school.name,
     template: `%s | ${school.name}`,
   },
   description:
     "The Peers Education System — a modern school in Shad Bagh, Lahore, from Playgroup through Matric.",
-  icons: {
-    icon: [{ url: "/favicon.png?v=2", type: "image/png" }],
-    apple: [{ url: "/favicon.png?v=2", type: "image/png" }],
-  },
   openGraph: {
     title: school.name,
     description:
