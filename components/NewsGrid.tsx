@@ -62,6 +62,7 @@ export function NewsGrid() {
                   src={item.image}
                   alt={item.title}
                   fill
+                  quality={75}
                   className="object-cover"
                   sizes="(max-width: 768px) 100vw, 50vw"
                 />

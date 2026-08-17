@@ -31,6 +31,7 @@ export default function HomePage() {
           alt="The Peers Education System campus in Shad Bagh, Lahore"
           fill
           priority
+          quality={75}
           className="object-cover object-center"
           sizes="100vw"
         />
@@ -195,6 +196,7 @@ export default function HomePage() {
                     src={item.image}
                     alt={item.title}
                     fill
+                    quality={75}
                     className="object-cover"
                     sizes="(max-width: 768px) 100vw, 33vw"
                   />

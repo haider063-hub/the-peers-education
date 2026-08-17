@@ -3,6 +3,7 @@ import { Mail, MapPin, MessageCircle, Phone } from "lucide-react";
 import { FacebookIcon } from "@/components/FacebookIcon";
 import { ButtonLink } from "@/components/Button";
 import { Container } from "@/components/Container";
+import { CampusMap } from "@/components/CampusMap";
 import { InquiryForm } from "@/components/InquiryForm";
 import { PageHero } from "@/components/PageHero";
 import { SectionHeading } from "@/components/SectionHeading";
@@ -97,14 +98,8 @@ export default function ContactPage() {
                 </a>
               </li>
             </ul>
-            <div className="mt-8 overflow-hidden rounded-[12px] ring-1 ring-deep-navy/10">
-              <iframe
-                title="The Peers Education System campus map"
-                src={school.mapsEmbed}
-                className="h-56 w-full border-0 sm:h-72"
-                loading="lazy"
-                referrerPolicy="no-referrer-when-downgrade"
-              />
+            <div className="mt-8">
+              <CampusMap />
             </div>
             <a
               href={school.mapsLink}

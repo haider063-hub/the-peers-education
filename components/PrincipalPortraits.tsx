@@ -27,6 +27,7 @@ export function PrincipalPortraits({
               src={principal.image}
               alt={`${principal.name}, ${principal.title}`}
               fill
+              quality={75}
               className="object-cover object-top"
               sizes="160px"
             />

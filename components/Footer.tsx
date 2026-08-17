@@ -1,24 +1,15 @@
-import Image from "next/image";
 import Link from "next/link";
 import { Mail, MapPin, Phone } from "lucide-react";
 import { FacebookIcon } from "@/components/FacebookIcon";
 import { WhatsAppIcon } from "@/components/WhatsAppIcon";
+import { CampusMap } from "@/components/CampusMap";
 import { Container } from "@/components/Container";
 import { Logo } from "@/components/Logo";
 import { navLinks, school } from "@/lib/content";
 
 export function Footer() {
   return (
-    <footer className="relative overflow-hidden text-white">
-      <Image
-        src="/images/modern-hero.jpg"
-        alt=""
-        fill
-        className="object-cover object-center"
-        sizes="100vw"
-      />
-      <div className="absolute inset-0 bg-[#0e2238]/88" />
-
+    <footer className="relative overflow-hidden bg-[#0e2238] text-white">
       <Container className="relative grid gap-8 py-16 lg:grid-cols-[minmax(0,1fr)_auto_minmax(16rem,20rem)] lg:items-start lg:gap-12">
         <div>
           <div className="inline-flex rounded-[10px] bg-white px-3 py-2">
@@ -94,14 +85,8 @@ export function Footer() {
           <p className="text-sm font-bold uppercase tracking-[0.16em] text-white">
             Campus map
           </p>
-          <div className="mt-6 overflow-hidden rounded-[12px] ring-1 ring-marigold/40">
-            <iframe
-              title="The Peers Education System campus map"
-              src={school.mapsEmbed}
-              className="h-48 w-full border-0 sm:h-56"
-              loading="lazy"
-              referrerPolicy="no-referrer-when-downgrade"
-            />
+          <div className="mt-6">
+            <CampusMap compact />
           </div>
           <a
             href={school.mapsLink}

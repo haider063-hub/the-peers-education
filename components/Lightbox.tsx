@@ -120,6 +120,7 @@ export function Lightbox({
               alt={item.alt}
               fill
               draggable={false}
+              quality={75}
               className="pointer-events-none object-contain"
               sizes="100vw"
               priority

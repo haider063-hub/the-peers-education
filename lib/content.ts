@@ -22,7 +22,7 @@ export const school = {
 };
 
 export const ogImage = {
-  url: "/images/home-page.png",
+  url: "/images/home-page.jpg",
   width: 1319,
   height: 737,
   alt: "The Peers Education System",
@@ -429,12 +429,12 @@ export const principals = [
   {
     name: "Zeeshan Ahmad",
     title: "Principal",
-    image: "/images/zeeshan.png",
+    image: "/images/zeeshan.jpg",
   },
   {
     name: "Iftikhar Sadiq",
     title: "Principal",
-    image: "/images/iftikhar.png",
+    image: "/images/iftikhar.jpg",
   },
 ] as const;
 

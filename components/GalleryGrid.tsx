@@ -54,7 +54,9 @@ export function GalleryGrid() {
                   src={item.src}
                   alt={item.alt}
                   width={800}
-                  height={600}
+                  height={533}
+                  quality={75}
+                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
                   className="h-auto w-full object-cover transition-transform duration-700 ease-[cubic-bezier(0.22,1,0.36,1)] motion-reduce:transform-none lg:[@media(hover:hover)_and_(pointer:fine)]:hover:scale-[1.03]"
                 />
               </button>

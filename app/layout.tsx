@@ -28,8 +28,8 @@ export const metadata: Metadata = {
   description:
     "The Peers Education System — a modern school in Shad Bagh, Lahore, from Playgroup through Matric.",
   icons: {
-    icon: [{ url: "/favicon.png", type: "image/png" }],
-    apple: [{ url: "/favicon.png", type: "image/png" }],
+    icon: [{ url: "/favicon.png?v=2", type: "image/png" }],
+    apple: [{ url: "/favicon.png?v=2", type: "image/png" }],
   },
   openGraph: {
     title: school.name,
