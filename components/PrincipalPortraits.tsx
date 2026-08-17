@@ -29,7 +29,7 @@ export function PrincipalPortraits({
               fill
               quality={75}
               className="object-cover object-top"
-              sizes="160px"
+              sizes="(max-width: 640px) 8rem, 10rem"
             />
           </div>
           <p className="mt-3 font-display text-base font-semibold leading-tight text-deep-navy sm:text-lg">

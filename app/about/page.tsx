@@ -5,7 +5,9 @@ import { NotebookMargin } from "@/components/NotebookMargin";
 import { PageHero } from "@/components/PageHero";
 import { PrincipalPortraits } from "@/components/PrincipalPortraits";
 import { SectionHeading } from "@/components/SectionHeading";
+import { SchemaJsonLd } from "@/components/SchemaJsonLd";
 import { director, facilities, ogImage, school, values } from "@/lib/content";
+import { aboutPageSchema } from "@/lib/schema";
 
 export const metadata: Metadata = {
   title: "About",
@@ -22,6 +24,7 @@ export const metadata: Metadata = {
 export default function AboutPage() {
   return (
     <>
+      <SchemaJsonLd jsonLd={aboutPageSchema()} />
       <PageHero
         kicker="About Peers"
         title="A school of this street, and of this community."

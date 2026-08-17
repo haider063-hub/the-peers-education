@@ -8,7 +8,9 @@ import { CampusMap } from "@/components/CampusMap";
 import { InquiryForm } from "@/components/InquiryForm";
 import { PageHero } from "@/components/PageHero";
 import { SectionHeading } from "@/components/SectionHeading";
+import { SchemaJsonLd } from "@/components/SchemaJsonLd";
 import { ogImage, school } from "@/lib/content";
+import { contactPageSchema } from "@/lib/schema";
 
 export const metadata: Metadata = {
   title: "Contact",
@@ -25,6 +27,7 @@ export const metadata: Metadata = {
 export default function ContactPage() {
   return (
     <>
+      <SchemaJsonLd jsonLd={contactPageSchema()} />
       <PageHero
         kicker="Contact"
         title="The office is easier to reach than a form."

@@ -64,7 +64,7 @@ export function NewsGrid() {
                   fill
                   quality={75}
                   className="object-cover"
-                  sizes="(max-width: 768px) 100vw, 50vw"
+                  sizes="(max-width: 768px) calc(100vw - 2rem), (max-width: 1280px) 50vw, 38rem"
                 />
               </div>
               <div className="p-4 sm:p-6">

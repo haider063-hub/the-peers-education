@@ -122,7 +122,7 @@ export function Lightbox({
               draggable={false}
               quality={75}
               className="pointer-events-none object-contain"
-              sizes="100vw"
+              sizes="(max-width: 640px) 90vw, 64rem"
               priority
             />
           </motion.div>

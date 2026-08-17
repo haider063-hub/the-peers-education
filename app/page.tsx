@@ -11,6 +11,7 @@ import { PrincipalPortraits } from "@/components/PrincipalPortraits";
 import { Reveal } from "@/components/Reveal";
 import { SectionHeading } from "@/components/SectionHeading";
 import { StatStrip } from "@/components/StatStrip";
+import { SchemaJsonLd } from "@/components/SchemaJsonLd";
 import {
   director,
   faqs,
@@ -19,12 +20,14 @@ import {
   school,
   whyPeers,
 } from "@/lib/content";
+import { homePageSchema } from "@/lib/schema";
 
 export default function HomePage() {
   const previewNews = newsItems.slice(0, 3);
 
   return (
     <>
+      <SchemaJsonLd jsonLd={homePageSchema()} />
       <section className="home-hero relative overflow-hidden">
         <Image
           src="/images/modern-hero.jpg"
@@ -198,7 +201,7 @@ export default function HomePage() {
                     fill
                     quality={75}
                     className="object-cover"
-                    sizes="(max-width: 768px) 100vw, 33vw"
+                    sizes="(max-width: 768px) calc(100vw - 2rem), (max-width: 1280px) 33vw, 400px"
                   />
                 </div>
                 <div className="p-5">

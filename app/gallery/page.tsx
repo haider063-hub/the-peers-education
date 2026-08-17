@@ -2,7 +2,9 @@ import type { Metadata } from "next";
 import { Container } from "@/components/Container";
 import { GalleryGrid } from "@/components/GalleryGrid";
 import { PageHero } from "@/components/PageHero";
+import { SchemaJsonLd } from "@/components/SchemaJsonLd";
 import { ogImage, school } from "@/lib/content";
+import { galleryPageSchema } from "@/lib/schema";
 
 export const metadata: Metadata = {
   title: "Gallery",
@@ -19,6 +21,7 @@ export const metadata: Metadata = {
 export default function GalleryPage() {
   return (
     <>
+      <SchemaJsonLd jsonLd={galleryPageSchema()} />
       <PageHero
         kicker="Gallery"
         title={`Life at ${school.name}.`}

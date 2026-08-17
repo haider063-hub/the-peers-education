@@ -5,7 +5,9 @@ import { Container } from "@/components/Container";
 import { IconMark } from "@/components/IconMark";
 import { PageHero } from "@/components/PageHero";
 import { SectionHeading } from "@/components/SectionHeading";
+import { SchemaJsonLd } from "@/components/SchemaJsonLd";
 import { activities, ogImage } from "@/lib/content";
+import { academicsPageSchema } from "@/lib/schema";
 
 export const metadata: Metadata = {
   title: "Academics",
@@ -22,6 +24,7 @@ export const metadata: Metadata = {
 export default function AcademicsPage() {
   return (
     <>
+      <SchemaJsonLd jsonLd={academicsPageSchema()} />
       <PageHero
         kicker="Academics"
         title="From Playgroup to Matric, on one campus."

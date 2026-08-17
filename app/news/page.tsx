@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
+import { SchemaJsonLd } from "@/components/SchemaJsonLd";
 import { ogImage } from "@/lib/content";
+import { newsPageSchema } from "@/lib/schema";
 import { Container } from "@/components/Container";
 import { NewsGrid } from "@/components/NewsGrid";
 import { PageHero } from "@/components/PageHero";
@@ -19,6 +21,7 @@ export const metadata: Metadata = {
 export default function NewsPage() {
   return (
     <>
+      <SchemaJsonLd jsonLd={newsPageSchema()} />
       <PageHero
         kicker="News"
         title="What the school has been busy with."

@@ -5,6 +5,7 @@ import { FaqAccordion } from "@/components/FaqAccordion";
 import { InquiryForm } from "@/components/InquiryForm";
 import { PageHero } from "@/components/PageHero";
 import { SectionHeading } from "@/components/SectionHeading";
+import { SchemaJsonLd } from "@/components/SchemaJsonLd";
 import {
   admissionSteps,
   ageCriteria,
@@ -12,6 +13,7 @@ import {
   ogImage,
   requiredDocuments,
 } from "@/lib/content";
+import { admissionsPageSchema } from "@/lib/schema";
 
 export const metadata: Metadata = {
   title: "Admissions",
@@ -28,6 +30,7 @@ export const metadata: Metadata = {
 export default function AdmissionsPage() {
   return (
     <>
+      <SchemaJsonLd jsonLd={admissionsPageSchema()} />
       <PageHero
         kicker="Admissions"
         title="Come and see the school first."

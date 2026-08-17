@@ -4,8 +4,10 @@ import { Navbar } from "@/components/Navbar";
 import { AdmissionsCta } from "@/components/AdmissionsCta";
 import { Footer } from "@/components/Footer";
 import { QuickContact } from "@/components/QuickContact";
+import { SchemaJsonLd } from "@/components/SchemaJsonLd";
 import { SmoothScroll } from "@/components/SmoothScroll";
 import { school, ogImage } from "@/lib/content";
+import { schoolOrganizationSchema, siteUrl } from "@/lib/schema";
 import "./globals.css";
 
 const manrope = Manrope({
@@ -21,7 +23,7 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://the-peers-education.vercel.app"),
+  metadataBase: new URL(siteUrl),
   title: {
     default: school.name,
     template: `%s | ${school.name}`,
@@ -61,6 +63,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         className="flex min-h-full flex-col bg-paper font-sans text-ink"
         suppressHydrationWarning
       >
+        <SchemaJsonLd jsonLd={schoolOrganizationSchema()} />
         <SmoothScroll>
           <Navbar />
           <main className="flex-1">{children}</main>
