@@ -49,7 +49,7 @@ export function Footer() {
               <Phone size={16} className="mt-1 shrink-0 text-marigold" />
               <a
                 href={school.phoneHref}
-                className="link-underline w-fit transition-colors duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] hover:text-marigold"
+                className="link-underline w-fit"
               >
                 {school.phone}
               </a>
@@ -58,7 +58,7 @@ export function Footer() {
               <Mail size={16} className="mt-1 shrink-0 text-marigold" />
               <a
                 href={`mailto:${school.email}`}
-                className="link-underline w-fit break-all transition-colors duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] hover:text-marigold"
+                className="link-underline w-fit break-all"
               >
                 {school.email}
               </a>
@@ -69,12 +69,9 @@ export function Footer() {
                 href={school.mapsLink}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="link-underline w-fit transition-colors duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] hover:text-marigold"
+                className="link-underline w-fit"
               >
                 {school.location}
-                <span className="mt-0.5 block text-base text-white/55">
-                  {school.plusCode}
-                </span>
               </a>
             </li>
           </ul>

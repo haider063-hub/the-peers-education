@@ -3,7 +3,7 @@ export const school = {
   shortName: "The Peers",
   tagline: "Where Every Child's Story Begins",
   location: "Amir Road, Shad Bagh, Lahore",
-  plusCode: "J82R+C5C, Shad Bagh, Lahore",
+  plusCode: "J82R+C5C",
   mapsQuery: "J82R+C5C Shad Bagh Lahore",
   mapsEmbed:
     "https://www.google.com/maps?q=J82R%2BC5C,+Shad+Bagh,+Lahore&output=embed",

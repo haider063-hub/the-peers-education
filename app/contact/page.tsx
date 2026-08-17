@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
-import { Mail, MapPin, MessageCircle, Phone } from "lucide-react";
+import { Mail, MapPin, Phone } from "lucide-react";
 import { FacebookIcon } from "@/components/FacebookIcon";
+import { WhatsAppIcon } from "@/components/WhatsAppIcon";
 import { ButtonLink } from "@/components/Button";
 import { Container } from "@/components/Container";
 import { CampusMap } from "@/components/CampusMap";
@@ -42,6 +43,7 @@ export default function ContactPage() {
                 Call the office
               </ButtonLink>
               <ButtonLink href={school.whatsappHref} variant="ghost" className="w-full sm:w-auto">
+                <WhatsAppIcon size={16} />
                 WhatsApp
               </ButtonLink>
             </div>
@@ -55,24 +57,12 @@ export default function ContactPage() {
                   className="link-underline"
                 >
                   {school.location}
-                  <span className="mt-0.5 block text-base">{school.plusCode}</span>
                 </a>
               </li>
               <li className="flex gap-3">
                 <Phone className="mt-0.5 shrink-0 text-marigold" size={18} />
                 <a href={school.phoneHref} className="link-underline">
                   {school.phone}
-                </a>
-              </li>
-              <li className="flex gap-3">
-                <MessageCircle className="mt-0.5 shrink-0 text-marigold" size={18} />
-                <a
-                  href={school.whatsappHref}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="link-underline"
-                >
-                  WhatsApp
                 </a>
               </li>
               <li className="flex gap-3">
